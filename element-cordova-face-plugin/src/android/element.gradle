@@ -1,0 +1,33 @@
+repositories{
+  jcenter { url "http://jcenter.bintray.com/"}
+  flatDir {
+    dirs 'libs'
+  }
+}
+
+dependencies {
+   compile fileTree(include: ['*.aar'], dir: 'libs')
+}
+
+android {
+	packagingOptions {
+		exclude 'META-INF/NOTICE'
+		exclude 'META-INF/LICENSE'
+	}
+	defaultConfig {
+		ndk {
+			abiFilters "armeabi-v7a"
+		}
+	}
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '26.0.0'
+            }
+        }
+    }
+}

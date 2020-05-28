@@ -1,0 +1,103 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: Nunito;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    background-image:url(../img/splash_screen.png);
+}
+
+/* Portrait layout (default) */
+.app {
+    height:100%;                   /* text area height */
+    width:90%;                   /* text area width */
+    text-align:center;
+    padding:20px;
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    margin: 20px;
+}
+
+#sync {
+    display:inline-block;
+    float: right;
+    margin: 20px;
+}
+
+table {
+    max-height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+tr {
+    height: 50px;
+}
+
+.rowName {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.rowId {
+
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.elementButton {
+    border-radius: 8px;
+    background-color: #11BDC6;
+    color: #FFFFFF;
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    margin: 20px;
+    display:inline-block;
+}
+
+.elementButtonPill {
+    padding: 6px 12px;
+    height: 30px;
+    background: #E8F6F6;
+    border-radius: 40px;
+}
+
+.elementInput {
+    background: #F4F7F8;
+    font-size: 18px;
+    height: 50px;
+    width: 80%;
+    padding-left: 20px;
+}

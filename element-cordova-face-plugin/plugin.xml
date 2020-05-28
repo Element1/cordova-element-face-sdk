@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="element-face-sdk"
+version="1.2.4"
+    > <!-- version needs to be by itself on the 4th line for automated editing -->
+    <name>Element</name>
+    <description>Cordova Android Plugin for Element Face</description>
+
+    <js-module src="www/element.js" name="device">
+        <clobbers target="element" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ElementCordovaFaceSDK">
+                <param name="android-package" value="com.element.plugin.ElementCordovaFaceSDK"/>
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="android-minSdkVersion" value="21" />
+            <preference name="android-targetSdkVersion" value="28" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.element.camera.ElementFaceCaptureActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            <activity android:name="com.element.camera.ElementFaceEnrollActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            <activity android:name="com.element.camera.ElementFaceAuthActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        </config-file>
+
+        <source-file src="src/android/ElementCordovaFaceSDK.java" target-dir="src/com/element/plugin" />
+        <source-file src="src/android/element-face-core.aar" target-dir="libs" />
+        <source-file src="src/android/element-face-cam.aar" target-dir="libs" />
+        <source-file src="src/android/element-face-support.aar" target-dir="libs" /> 
+        <source-file src="src/android/element.eak" target-dir="src/main/resources" />
+
+        <framework src="androidx.multidex:multidex:2.0.0" />
+        <framework src="androidx.work:work-runtime:2.4.0-alpha02" />    
+        <framework src="androidx.appcompat:appcompat:1.2.0-beta01" />
+        <framework src="com.amazonaws:aws-android-sdk-core:2.8.+" />
+        <framework src="com.amazonaws:aws-android-sdk-s3:2.8.+" />
+        <framework src="com.google.android.gms:play-services-location:16.0.0" />
+        <framework src="com.google.guava:guava:27.0.1-android" />
+        <framework src="com.squareup.okhttp3:okhttp:3.11.0" />
+        <framework src="src/android/element.gradle" custom="true" type="gradleReference" />
+    </platform>
+
+</plugin>

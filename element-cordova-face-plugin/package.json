@@ -1,0 +1,25 @@
+{
+  "name": "element-face-sdk",
+  "version": "1.2.4",
+  "description": "Cordova Android Plugin for Element Face",
+  "cordova": {
+    "id": "element-face-sdk",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Element1/cordova-element-face-sdk.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Element",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Element1/cordova-element-face-sdk/issues"
+  },
+  "homepage": "https://github.com/Element1/cordova-element-face-sdk/blob/master/element-cordova-face-sdk-example/README.md"
+}
