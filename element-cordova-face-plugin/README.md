@@ -11,15 +11,11 @@ Please see the [example](../element-cordova-face-sdk-example/readme_images/READM
 ## Launcher [Functions](./www/element.js)
 Each method below has a success and failure callback that will be called at the end of the process. All inputs are Strings.
 
-### create
-Adds a new untrained user to the internal data store. It is up to the client to validate each field based on their business requirements.
-Requires **userId**, **firstname**, **lastname**
+### enoll
+Adds a new user to the internal data store, then starts training them. It is up to the client to validate each field based on their business requirements.
+If **userId** is blank, it will be generated. If **firstname** is blank, **userId** will be used.
 
-### train
-Start training a user that was previously created using the **create** method above.
-Requires **userId**
-
-### authentication
+### auth
 Initiate a face authentication for the given userId.
 Requires **userId**
 

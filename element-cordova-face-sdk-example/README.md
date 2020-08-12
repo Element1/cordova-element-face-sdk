@@ -4,7 +4,7 @@ The Element Face SDK is an API library to create the biometric models that can b
 
 ## Version Support
 - The Element Face SDK supports Android 5.0+ / API 21+ (Lollipop and up)
-- Android Studio 3.1.3 with Gradle 4.4
+- Android Studio 3.1.3 with Gradle 6.1.1
 - Last Target SDK Version: 28
 
 ## Prerequisites

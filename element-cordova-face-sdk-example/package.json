@@ -11,6 +11,7 @@
     "license": "",
     "dependencies": {
         "cordova-android": "^8.0.0",
+        "cordova-androidx-build": "^1.0.3",
         "cordova-plugin-whitelist": "^1.3.4",
         "element-face-sdk": "file:../element-cordova-face-plugin"
     },

@@ -9,7 +9,8 @@ function errorCallback(message){
 
 function listAndRender() {
     element.list(function(message) { 
-        renderUserTable(message); 
+        var env = JSON.parse(message);
+        renderUserTable(env.resultMessage); 
     }, errorCallback);
 }
 
@@ -29,7 +30,7 @@ function renderUserTable(listJson) {
     // once it's part of the DOM we can hook into it
     for (let user of userArray) {
         document.getElementById('auth_' + user.userId).addEventListener('click', function(){
-                element.authentication(user.userId, successCallback, errorCallback);
+                element.auth(user.userId, successCallback, errorCallback);
             });
     }
 }
@@ -41,7 +42,7 @@ var app = {
     onDeviceReady: function() {
         console.log('onDeviceReady');
         document.getElementById('create').addEventListener('click', function(){
-            var id = null; //document.getElementById('id').value;
+            var id = ""; //document.getElementById('id').value;
             var firstname = document.getElementById('firstname').value;
             var lastname = document.getElementById('lastname').value;
 
@@ -50,7 +51,7 @@ var app = {
                 return;
             }
 
-            element.create(id, firstname, lastname, function(message) { 
+            element.enroll(id, firstname, lastname, function(message) { 
                 listAndRender();
             }, errorCallback);
         });
