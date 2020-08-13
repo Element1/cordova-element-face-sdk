@@ -6,7 +6,7 @@
 - Replace the placeholder files in the [folder](./src/android).
 
 ## Integrate with existing cordova app
-Please see the [example](../element-cordova-face-sdk-example/readme_images/README.md).
+Please see the [example](../element-cordova-face-sdk-example/README.md).
 
 ## Launcher [Functions](./www/element.js)
 Each method below has a success and failure callback that will be called at the end of the process. All inputs are Strings.
@@ -23,4 +23,4 @@ Requires **userId**
 Polls the Element data store to get a full list of users as a JSON array.
 
 ## Customization
-New SDK support some customization, although still need to be done in android way. You can customize your `plugin.xml` file to add `string` or resources that available in this [docs](https://github.com/Element1/element-face-sdk-android/blob/master/docs/element-face-ui.md).
+New SDK support some customization, although still need to be done in android way. Please refer to [element-face-sdk-android](https://github.com/Element1/element-face-sdk-android) for more details.
